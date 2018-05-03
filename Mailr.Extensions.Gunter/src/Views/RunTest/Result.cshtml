@@ -1,0 +1,16 @@
+﻿@using Mailr.Extensions.Gunter.Models.RunTest
+@model Mailr.Extensions.Gunter.Models.RunTest.ResultBody
+
+<br />
+
+@foreach (var module in Model.Modules.OrderBy(x => x.Value.Ordinal))
+{
+    Html.RenderPartial($"Modules/{module.Key}", module.Value);
+}
+
+<hr />
+
+@{
+    Html.RenderPartial("Footer");
+}
+

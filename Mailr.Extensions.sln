@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailr", "Mailr\Mailr\Mailr.csproj", "{CB3B38D6-73CB-4FA5-B3F7-E7324EAD562B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailr.Models", "Mailr\Mailr.Models\Mailr.Models.csproj", "{285A417B-664A-4FDC-AAF1-FD2396A521EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailr.Models.Abstractions", "Mailr\Mailr.Models.Abstractions\Mailr.Models.Abstractions.csproj", "{D10E0B60-D1DF-4AE7-9326-BB19CB5E4990}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailr.Utilities", "Mailr\Mailr.Utilities\Mailr.Utilities.csproj", "{8B69F6AA-EFE2-40DE-9163-14C4D80F8E6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{D58A6B0F-2318-41C6-BF18-A418DC73A3E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{A352BD1E-DF5F-4255-86BB-65FCE2C57C29}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailr.Extensions.Gunter", "Mailr.Extensions.Gunter\Mailr.Extensions.Gunter.csproj", "{50EA6049-B706-4CBD-A6A4-E08919AE1884}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB3B38D6-73CB-4FA5-B3F7-E7324EAD562B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB3B38D6-73CB-4FA5-B3F7-E7324EAD562B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB3B38D6-73CB-4FA5-B3F7-E7324EAD562B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB3B38D6-73CB-4FA5-B3F7-E7324EAD562B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{285A417B-664A-4FDC-AAF1-FD2396A521EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{285A417B-664A-4FDC-AAF1-FD2396A521EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{285A417B-664A-4FDC-AAF1-FD2396A521EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{285A417B-664A-4FDC-AAF1-FD2396A521EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D10E0B60-D1DF-4AE7-9326-BB19CB5E4990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D10E0B60-D1DF-4AE7-9326-BB19CB5E4990}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D10E0B60-D1DF-4AE7-9326-BB19CB5E4990}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D10E0B60-D1DF-4AE7-9326-BB19CB5E4990}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B69F6AA-EFE2-40DE-9163-14C4D80F8E6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B69F6AA-EFE2-40DE-9163-14C4D80F8E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B69F6AA-EFE2-40DE-9163-14C4D80F8E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B69F6AA-EFE2-40DE-9163-14C4D80F8E6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50EA6049-B706-4CBD-A6A4-E08919AE1884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50EA6049-B706-4CBD-A6A4-E08919AE1884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50EA6049-B706-4CBD-A6A4-E08919AE1884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50EA6049-B706-4CBD-A6A4-E08919AE1884}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CB3B38D6-73CB-4FA5-B3F7-E7324EAD562B} = {D58A6B0F-2318-41C6-BF18-A418DC73A3E8}
+		{285A417B-664A-4FDC-AAF1-FD2396A521EB} = {D58A6B0F-2318-41C6-BF18-A418DC73A3E8}
+		{D10E0B60-D1DF-4AE7-9326-BB19CB5E4990} = {D58A6B0F-2318-41C6-BF18-A418DC73A3E8}
+		{8B69F6AA-EFE2-40DE-9163-14C4D80F8E6E} = {D58A6B0F-2318-41C6-BF18-A418DC73A3E8}
+		{50EA6049-B706-4CBD-A6A4-E08919AE1884} = {A352BD1E-DF5F-4255-86BB-65FCE2C57C29}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {842B55A7-A819-486A-A158-1E0C80AE5538}
+	EndGlobalSection
+EndGlobal

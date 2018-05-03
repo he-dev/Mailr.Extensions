@@ -1,0 +1,25 @@
+﻿@using Mailr.Extensions.Gunter.Models.RunTest
+@model Mailr.Extensions.Gunter.Models.RunTest.DataSummary
+
+<h4 class="m-heading">@Model.Heading</h4>
+<table class="m-table">
+    <thead>
+        <tr>
+            @foreach (var header in Model.Table.Head ?? Enumerable.Empty<string>())
+            {
+                <th class="m-cell m-table-header">@header</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Model.Table.Body ?? Enumerable.Empty<IEnumerable<string>>())
+        {
+            <tr>
+                @foreach (var value in row)
+                {
+                    <td class="m-cell">@value</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

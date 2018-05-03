@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net47</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="src\Views\**\*.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="src\Mvc\**" />
+    <EmbeddedResource Remove="src\Mvc\**" />
+    <None Remove="src\Mvc\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="src\Views\RunTest\Modules\DataSource.cshtml" />
+    <None Remove="src\Views\RunTest\Modules\DataSummary.cshtml" />
+    <None Remove="src\Views\RunTest\Modules\Greeting.cshtml" />
+    <None Remove="src\Views\RunTest\Modules\Level.cshtml" />
+    <None Remove="src\Views\RunTest\Modules\TestCase.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="11.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.3" />
+    <PackageReference Include="Reusable.Core" Version="4.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mailr\Mailr.Models.Abstractions\Mailr.Models.Abstractions.csproj" />
+    <ProjectReference Include="..\Mailr\Mailr.Models\Mailr.Models.csproj" />
+    <ProjectReference Include="..\Mailr\Mailr.Utilities\Mailr.Utilities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="src\Views\RunTest\Modules\DataSource.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="src\Views\RunTest\Modules\DataSummary.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="src\Views\RunTest\Modules\Greeting.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="src\Views\RunTest\Modules\Level.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="src\Views\RunTest\Modules\TestCase.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="src\Views\RunTest\Result.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="wwwroot\css\RunTest\Result.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
