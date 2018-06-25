@@ -24,14 +24,16 @@
 
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="11.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.3" />
-    <PackageReference Include="Reusable.Core" Version="4.5.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.1" />
+    <PackageReference Include="Reusable.AspNetCore.Http.SemanticLogger" Version="6.0.1" />
+    <PackageReference Include="Reusable.Core" Version="6.0.1" />
+    <PackageReference Include="Reusable.Utilities.AspNetCore" Version="6.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mailr\Mailr.Models.Abstractions\Mailr.Models.Abstractions.csproj" />
-    <ProjectReference Include="..\Mailr\Mailr.Models\Mailr.Models.csproj" />
-    <ProjectReference Include="..\Mailr\Mailr.Utilities\Mailr.Utilities.csproj" />
+    <ProjectReference Include="..\..\Mailr\Mailr.Models.Abstractions\Mailr.Models.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Mailr\Mailr.Models\Mailr.Models.csproj" />
+    <ProjectReference Include="..\..\Mailr\Mailr.Utilities\Mailr.Utilities.csproj" />
   </ItemGroup>
 
   <ItemGroup>

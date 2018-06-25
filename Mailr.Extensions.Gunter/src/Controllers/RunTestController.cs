@@ -3,6 +3,8 @@ using Mailr.Extensions.Gunter.Models.RunTest;
 using Mailr.Models;
 using Mailr.Utilities.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
+using Reusable.AspNetCore.Http.Mvc.Filters;
+
 
 [assembly: AspMvcViewLocationFormat("/src/Views/{1}/{0}.cshtml")]
 [assembly: AspMvcPartialViewLocationFormat("/src/Views/{1}/{0}.cshtml")]
@@ -10,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Mailr.Extensions.Gunter.Controllers
 {
     [Route("api/gunter/[controller]")]
-    [UseAssemblyName(typeof(RunTestController))]
+    [ExtensionId(typeof(RunTestController))]
     public class RunTestController : Controller
     {
         private static readonly ResultBody ResultBody = new ResultBody
