@@ -5,14 +5,14 @@
 <table class="m-table">
     <thead>
         <tr>
-            @foreach (var header in Model.Table.Head ?? Enumerable.Empty<string>())
+            @foreach (var header in (Model.Table.Head?.FirstOrDefault() ?? Enumerable.Empty<object>()))
             {
                 <th class="m-cell m-table-header">@header</th>
             }
         </tr>
     </thead>
     <tbody>
-        @foreach (var row in Model.Table.Body ?? Enumerable.Empty<IEnumerable<string>>())
+        @foreach (var row in Model.Table.Body ?? Enumerable.Empty<IEnumerable<object>>())
         {
             <tr>
                 @foreach (var value in row)

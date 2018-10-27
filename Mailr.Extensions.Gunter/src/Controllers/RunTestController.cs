@@ -1,9 +1,11 @@
-﻿using JetBrains.Annotations;
+﻿using System.Collections.Generic;
+using JetBrains.Annotations;
 using Mailr.Extensions.Gunter.Models.RunTest;
-using Mailr.Models;
-using Mailr.Utilities.Mvc.Filters;
+using Mailr.Extensions.Models;
+using Mailr.Extensions.Utilities.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
 using Reusable.AspNetCore.Http.Mvc.Filters;
+using Reusable.Utilities.AspNetCore.ActionFilters;
 
 
 [assembly: AspMvcViewLocationFormat("/src/Views/{1}/{0}.cshtml")]
@@ -35,7 +37,7 @@ namespace Mailr.Extensions.Gunter.Controllers
                     Heading = "Test Case",
                     Table = new Table
                     {
-                        Head = new string[0],
+                        Head = new List<IList<object>>(),
                         Body = new []
                         {
                             new [] { "Filter", "none" },
@@ -55,7 +57,7 @@ namespace Mailr.Extensions.Gunter.Controllers
                     Heading = "Data Source",
                     Table = new Table
                     {
-                        Head = new string[0],
+                        Head = new List<IList<object>>(),
                         Body = new []
                         {
                             new [] { "Type", "TableOrView" },
@@ -73,15 +75,18 @@ namespace Mailr.Extensions.Gunter.Controllers
                 {
                     Table = new Table
                     {
-                        Head = new string[]
+                        Head = new List<IList<object>>
                         {
-                            "Product",
-                            "Transaction",
-                            "Elapsed",
-                            "Event",
-                            "Result",
-                            "Exception",
-                            "RowCount"
+                            new List<object>
+                            {
+                                "Product",
+                                "Transaction",
+                                "Elapsed",
+                                "Event",
+                                "Result",
+                                "Exception",
+                                "RowCount"
+                            }                            
                         },
                         Body = new []
                         {
@@ -110,6 +115,7 @@ namespace Mailr.Extensions.Gunter.Controllers
         }
 
         [HttpPost("[action]")]
+        [ServiceFilter(typeof(ValidateModel))]
         [SendEmail]
         [LogResponseBody]
         public IActionResult Result([FromBody] Email<ResultBody> email)

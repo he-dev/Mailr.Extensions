@@ -10,7 +10,7 @@ namespace Mailr.Extensions.Gunter.Models.RunTest
 
         [JsonConverter(typeof(DictionaryConverter<Module>))]
         public IDictionary<string, Module> Modules { get; set; } = new Dictionary<string, Module>();
-    }    
+    }
 
     public abstract class Module
     {
@@ -19,41 +19,28 @@ namespace Mailr.Extensions.Gunter.Models.RunTest
         public string Text { get; set; }
 
         public int Ordinal { get; set; }
+
+        public Table Table { get; set; }
     }
 
-    public class Level : Module
-    {
-    }
+    public class Level : Module { }
 
-    public class Greeting : Module
-    {
-    }
+    public class Greeting : Module { }
+
+    public class TestCase : Module { }
+
+    public class DataSource : Module { }
+
+    public class DataSummary : Module { }
+
+    public class Signature : Module { }
 
     public class Table
     {
-        public IList<string> Head { get; set; }
+        public IList<IList<object>> Head { get; set; }
 
-        public IList<IList<string>> Body { get; set; }
+        public IList<IList<object>> Body { get; set; }
 
-        public IList<string> Foot { get; set; }
-    }
-
-    public class TestCase : Module
-    {
-        public Table Table { get; set; }
-    }
-
-    public class DataSource : Module
-    {
-        public Table Table { get; set; }
-    }
-
-    public class DataSummary : Module
-    {
-        public Table Table { get; set; }
-    }
-
-    public class Signature : Module
-    {
+        public IList<IList<object>> Foot { get; set; }
     }
 }

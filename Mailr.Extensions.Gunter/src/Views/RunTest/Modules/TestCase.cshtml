@@ -4,7 +4,7 @@
 <h4 class="m-heading">@Model.Heading</h4>
 <table class="m-table">
     <tbody>
-        @foreach (var row in Model.Table.Body ?? Enumerable.Empty<IList<string>>().ToList())
+        @foreach (var row in Model.Table.Body ?? Enumerable.Empty<IList<object>>().ToList())
         {
             <tr>
                 <th class="m-cell m-table-header">@row[0]</th>
