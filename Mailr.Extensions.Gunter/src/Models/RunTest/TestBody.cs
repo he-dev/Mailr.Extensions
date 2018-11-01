@@ -6,7 +6,7 @@ namespace Mailr.Extensions.Gunter.Models.RunTest
 {
     public class ResultBody
     {
-        public string Theme { get; set; }
+        //public string Theme { get; set; }
 
         [JsonConverter(typeof(DictionaryConverter<Module>))]
         public IDictionary<string, Module> Modules { get; set; } = new Dictionary<string, Module>();

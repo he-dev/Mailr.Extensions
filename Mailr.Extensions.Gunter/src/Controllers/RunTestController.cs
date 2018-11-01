@@ -14,7 +14,7 @@ using Reusable.Utilities.AspNetCore.ActionFilters;
 namespace Mailr.Extensions.Gunter.Controllers
 {
     [Route("api/gunter/[controller]")]
-    [ExtensionId(typeof(RunTestController))]
+    [Extension]
     public class RunTestController : Controller
     {
         private static readonly ResultBody ResultBody = new ResultBody
