@@ -2,6 +2,7 @@
 using JetBrains.Annotations;
 using Mailr.Extensions.Gunter.Models.RunTest;
 using Mailr.Extensions.Models;
+using Mailr.Extensions.Utilities.Mvc;
 using Mailr.Extensions.Utilities.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
 using Reusable.AspNetCore.Http.Mvc.Filters;
@@ -109,9 +110,9 @@ namespace Mailr.Extensions.Gunter.Controllers
 
         // http://localhost:49471/api/gunter/runtest/result
         [HttpGet("[action]")]
-        public IActionResult Result()
+        public IActionResult Result(bool embedded)
         {
-            return View(ResultBody);
+            return this.EmailView(embedded)(null, ResultBody); // View(ResultBody);
         }
 
         [HttpPost("[action]")]
@@ -120,7 +121,7 @@ namespace Mailr.Extensions.Gunter.Controllers
         [LogResponseBody]
         public IActionResult Result([FromBody] Email<ResultBody> email)
         {
-            return PartialView(email.Body);
+            return this.EmailView(embedded: false)(null, email.Body); // return PartialView(email.Body);
         }
     }
 }
