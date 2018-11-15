@@ -2,9 +2,9 @@
 using Mailr.Extensions.Gunter.Json;
 using Newtonsoft.Json;
 
-namespace Mailr.Extensions.Gunter.Models.RunTest
+namespace Mailr.Extensions.Gunter.Models.Alerts
 {
-    public class ResultBody
+    public class TestResultBody
     {
         //public string Theme { get; set; }
 

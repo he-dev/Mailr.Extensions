@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using JetBrains.Annotations;
-using Mailr.Extensions.Gunter.Models.RunTest;
+using Mailr.Extensions.Gunter.Models.Alerts;
 using Mailr.Extensions.Models;
 using Mailr.Extensions.Utilities.Mvc;
 using Mailr.Extensions.Utilities.Mvc.Filters;
@@ -8,17 +8,13 @@ using Microsoft.AspNetCore.Mvc;
 using Reusable.AspNetCore.Http.Mvc.Filters;
 using Reusable.Utilities.AspNetCore.ActionFilters;
 
-
-[assembly: AspMvcViewLocationFormat("/src/Views/{1}/{0}.cshtml")]
-[assembly: AspMvcPartialViewLocationFormat("/src/Views/{1}/{0}.cshtml")]
-
 namespace Mailr.Extensions.Gunter.Controllers
 {
     [Route("api/gunter/[controller]")]
     [Extension]
-    public class RunTestController : Controller
+    public class AlertsController : Controller
     {
-        private static readonly ResultBody ResultBody = new ResultBody
+        private static readonly TestResultBody TestResultBody = new TestResultBody
         {
             Modules =
             {
@@ -110,18 +106,18 @@ namespace Mailr.Extensions.Gunter.Controllers
 
         // http://localhost:49471/api/gunter/runtest/result
         [HttpGet("[action]")]
-        public IActionResult Result(bool embedded)
+        public IActionResult TestResult([FromQuery] EmailView view)
         {
-            return this.EmailView(embedded)(null, ResultBody); // View(ResultBody);
+            return this.EmailView(view)(null, TestResultBody);
         }
 
         [HttpPost("[action]")]
         [ServiceFilter(typeof(ValidateModel))]
         [SendEmail]
         [LogResponseBody]
-        public IActionResult Result([FromBody] Email<ResultBody> email)
+        public IActionResult TestResult([FromBody] Email<TestResultBody> email)
         {
-            return this.EmailView(embedded: false)(null, email.Body); // return PartialView(email.Body);
+            return this.EmailView(EmailView.Original)(null, email.Body);
         }
     }
 }
