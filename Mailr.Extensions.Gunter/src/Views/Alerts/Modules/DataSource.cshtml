@@ -3,7 +3,7 @@
 
 <h4 class="m-heading">@Model.Heading</h4>
 <table class="m-table">
-    <tbody>
+    <tbody class="m-table-header">
         @foreach (var row in Model.Table.Body ?? Enumerable.Empty<IList<object>>().ToList())
         {
             <tr>

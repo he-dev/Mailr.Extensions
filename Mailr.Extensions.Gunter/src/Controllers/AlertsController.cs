@@ -5,7 +5,7 @@ using Mailr.Extensions.Models;
 using Mailr.Extensions.Utilities.Mvc;
 using Mailr.Extensions.Utilities.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
-using Reusable.AspNetCore.Http.Mvc.Filters;
+using Reusable.OmniLog.Mvc.Filters;
 using Reusable.Utilities.AspNetCore.ActionFilters;
 
 namespace Mailr.Extensions.Gunter.Controllers
