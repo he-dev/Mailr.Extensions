@@ -8,8 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 using Reusable.OmniLog.Mvc.Filters;
 using Reusable.Utilities.AspNetCore.ActionFilters;
 
-namespace Mailr.Extensions.Gunter.Controllers
+namespace Mailr.Extensions.Gunter.Controllers.v2
 {
+    [ApiVersion("2.0")]
     [Route("api/gunter/[controller]")]
     [Extension]
     public class AlertsController : Controller
