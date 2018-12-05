@@ -114,7 +114,7 @@ namespace Mailr.Extensions.Gunter.Controllers.v1
 
         [HttpPost("[action]")]
         [ServiceFilter(typeof(ValidateModel))]
-        [SendEmail]
+        [ServiceFilter(typeof(SendEmail))]
         [LogResponseBody]
         public IActionResult TestResult([FromBody] Email<TestResultBody> email)
         {
