@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Custom;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Reusable.Exceptionizer;
 using Reusable.Reflection;
 
 namespace Mailr.Extensions.Gunter.Json
@@ -54,10 +55,10 @@ namespace Mailr.Extensions.Gunter.Json
                     }
                     else
                     {
-                        throw DynamicException.Factory.CreateDynamicException(
+                        throw DynamicException.Create
+                        (
                             $"DictionaryNotFound",
-                            $"Expected a JsonObject but found {reader.TokenType}",
-                            null
+                            $"Expected a JsonObject but found {reader.TokenType}"
                         );
                     }
                 }
