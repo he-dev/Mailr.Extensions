@@ -4,6 +4,7 @@ using Mailr.Extensions.Gunter.Models.Alerts;
 using Mailr.Extensions.Models;
 using Mailr.Extensions.Utilities.Mvc;
 using Mailr.Extensions.Utilities.Mvc.Filters;
+using Mailr.Extensions.Utilities.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc;
 using Reusable.OmniLog.Mvc.Filters;
 using Reusable.Utilities.AspNetCore.ActionFilters;
@@ -11,8 +12,9 @@ using Reusable.Utilities.AspNetCore.ActionFilters;
 namespace Mailr.Extensions.Gunter.Controllers.v1
 {
     [ApiVersion("1.0", Deprecated = true)]
-    [Route("api/gunter/[controller]")]
+    [Route("api/v{version:apiVersion}/gunter/[controller]")]
     [Extension]
+    [ApiController]
     public class AlertsController : Controller
     {
         private static readonly TestResultBody TestResultBody = new TestResultBody
@@ -105,20 +107,20 @@ namespace Mailr.Extensions.Gunter.Controllers.v1
             }
         };
 
-        // http://localhost:49471/api/gunter/runtest/result
-        [HttpGet("[action]")]
-        public IActionResult TestResult([FromQuery] EmailView view)
-        {
-            return this.EmailView(view)(null, TestResultBody);
-        }
+        //// http://localhost:49471/api/gunter/runtest/result
+        //[HttpGet("[action]")]
+        //public IActionResult TestResult([FromQuery] EmailView view)
+        //{
+        //    return this.EmailView(view)(null, TestResultBody);
+        //}
 
         [HttpPost("[action]")]
         [ServiceFilter(typeof(ValidateModel))]
         [ServiceFilter(typeof(SendEmail))]
         [LogResponseBody]
-        public IActionResult TestResult([FromBody] Email<TestResultBody> email)
+        public IActionResult TestResult([FromBody] Email<TestResultBody> email, [ModelBinder(typeof(EmailViewBinder))] EmailView view)
         {
-            return this.EmailView(EmailView.Original)(null, email.Body);
+            return this.SelectEmailView(view)(null, email.Body);
         }
     }
 }
