@@ -7,6 +7,19 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">    
+    <OutDir>bin\Release</OutDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug.csproj|AnyCPU'">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>bin\Debug</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="src\Views\**\*.cshtml" />
   </ItemGroup>
@@ -30,6 +43,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0">
       <ExcludeAssets>analyzers</ExcludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,7 +59,7 @@
   <ItemGroup Condition="'$(Configuration)'=='Debug.csproj'">
     <ProjectReference Include="..\..\Reusable\Reusable.Core\Reusable.Core.csproj" />
     <ProjectReference Include="..\..\Reusable\Reusable.OmniLog.SemanticMiddleware\Reusable.OmniLog.SemanticMiddleware.csproj" />
-    <ProjectReference Include="..\..\Reusable\Reusable.Utilities.AspNetCore\Reusable.Utilities.AspNetCore.csproj" />    
+    <ProjectReference Include="..\..\Reusable\Reusable.Utilities.AspNetCore\Reusable.Utilities.AspNetCore.csproj" />
   </ItemGroup>
 
   <ItemGroup>

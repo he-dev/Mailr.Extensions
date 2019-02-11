@@ -55,10 +55,10 @@ namespace Mailr.Extensions.Gunter.Json
                     }
                     else
                     {
-                        throw DynamicException.Factory.CreateDynamicException(
+                        throw DynamicException.Create
+                        (
                             $"DictionaryNotFound",
-                            $"Expected a JsonObject but found {reader.TokenType}",
-                            null
+                            $"Expected a JsonObject but found {reader.TokenType}"
                         );
                     }
                 }
