@@ -86,3 +86,11 @@ m-hr {
 .m-product-name {
     color: #247BA0;
 }
+
+.m-passed {
+    background-color: #D4EFDF;
+}
+
+.m-failed {
+    background-color: #FADBD8;
+}
