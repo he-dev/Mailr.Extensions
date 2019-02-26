@@ -13,7 +13,7 @@
             //}
             <tr>
                 <th class="m-cell m-table-header">@row[0].Value</th>
-                <td class="m-cell">@row[1].Value</td>
+                <td class="m-cell">@row[1].Value?.ToString().Trim()</td>
             </tr>
         }
     </tbody>
