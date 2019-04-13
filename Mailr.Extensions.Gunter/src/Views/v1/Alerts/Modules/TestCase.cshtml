@@ -17,10 +17,10 @@
                 {
                     case IEnumerable<object> collection:
                         <td class="m-cell @styles">
-                            <ul style="padding: 0 0 0 1em; margin: 0;">
+                            <ul style="padding: 0 0 0 1em; margin: 0; list-style-type: none;">
                                 @foreach (var value in collection)
                                 {
-                                    <li>@value</li>
+                                    <li>&gt; @value</li>
                                 }
                             </ul>
                         </td>

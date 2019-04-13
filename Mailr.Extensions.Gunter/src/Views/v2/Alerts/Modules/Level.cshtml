@@ -1,4 +1,4 @@
 ﻿@using Mailr.Extensions.Gunter.Models.v2.Alerts
 @model Mailr.Extensions.Gunter.Models.v2.Alerts.Level
 
-<p class="m-test-case-level m-@Model.Text">@Model.Text</p>
+<p class="m-test-case-level m-@Model.Text.ToLower()">@Model.Text</p>
