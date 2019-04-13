@@ -3,6 +3,7 @@ using JetBrains.Annotations;
 using Mailr.Extensions.Gunter.Json;
 using Mailr.Extensions.Models;
 using Newtonsoft.Json;
+using Reusable.Utilities.JsonNet.Converters;
 
 namespace Mailr.Extensions.Gunter.Models.v2.Alerts
 {
@@ -10,9 +11,7 @@ namespace Mailr.Extensions.Gunter.Models.v2.Alerts
     [UsedImplicitly]
     public class TestResultBody
     {
-        //public string Theme { get; set; }
-
-        [JsonConverter(typeof(AbstractConverter<Module>))]
+        [JsonConverter(typeof(ListConverter<Module>))]
         public List<Module> Modules { get; set; } = new List<Module>();
     }
 

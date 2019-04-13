@@ -25,7 +25,7 @@ namespace Mailr.Extensions.Gunter.Controllers
         [LogResponseBody]
         public IActionResult TestResult([FromBody] Email<v1.TestResultBody> email, [ModelBinder(typeof(EmailViewBinder))] EmailView view)
         {
-            return this.SelectEmailView(EmailView.Original)("~/src/Views/v1/Alerts/TestResult.cshtml", email.Body);
+            return this.SelectEmailView(view)("~/src/Views/v1/Alerts/TestResult.cshtml", email.Body);
             //return this.SelectEmailView(EmailView.Original)(null, email.Body);
         }
         
@@ -36,7 +36,7 @@ namespace Mailr.Extensions.Gunter.Controllers
         [LogResponseBody]
         public IActionResult TestResult([FromBody] Email<v2.TestResultBody> email, [ModelBinder(typeof(EmailViewBinder))] EmailView view)
         {
-            return this.SelectEmailView(EmailView.Original)("~/src/Views/v2/Alerts/TestResult.cshtml", email.Body);
+            return this.SelectEmailView(view)("~/src/Views/v2/Alerts/TestResult.cshtml", email.Body);
             //return this.SelectEmailView(EmailView.Original)(null, email.Body);
         }
     }

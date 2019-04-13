@@ -1,34 +1,36 @@
 ﻿@using Mailr.Extensions.Gunter.Models.v1.Alerts
 @using Mailr.Extensions.Models
 @model Mailr.Extensions.Gunter.Models.v1.Alerts.TestCase
+@addTagHelper Mailr.Mvc.TagHelpers.InlineClassTagHelper, Mailr
+
 
 <h4 class="m-heading">@Model.Heading</h4>
 <table class="m-table">
     <tbody>
-    @foreach (var row in Model.Data?.Body ?? HtmlTableRowGroup.Empty)
-    {
-        var styles = string.Join(" ", (row[1].Styles ?? Enumerable.Empty<string>()).Select(s => $"m-{s}"));
-        <tr>
-            <th class="m-cell m-table-header">@row[0].Value</th>
-            
-            @switch (row[1].Value)
-            {
-                case IEnumerable<object> collection:                    
-                    <td class="m-cell @styles">
-                        <ul style="padding: 0 0 0 1em; margin: 0;">
-                            @foreach (var value in collection)
-                            {
-                                <li>@value</li>
-                            }
-                        </ul>
-                    </td>
-                    break;
-                default:
-                    <td class="m-cell @styles">@row[1].Value</td>
-                    break;
-            }
-            
-        </tr>
-    }
+        @foreach (var row in Model.Data?.Body ?? HtmlTableRowGroup.Empty)
+        {
+            var styles = string.Join(" ", (row[1].Styles ?? Enumerable.Empty<string>()).Select(s => $"m-{s}"));
+            <tr>
+                <th class="m-cell m-table-header">@row[0].Value</th>
+
+                @switch (row[1].Value)
+                {
+                    case IEnumerable<object> collection:
+                        <td class="m-cell @styles">
+                            <ul style="padding: 0 0 0 1em; margin: 0;">
+                                @foreach (var value in collection)
+                                {
+                                    <li>@value</li>
+                                }
+                            </ul>
+                        </td>
+                        break;
+                    default:
+                        <td class="m-cell @styles">@row[1].Value</td>
+                        break;
+                }
+
+            </tr>
+        }
     </tbody>
 </table>

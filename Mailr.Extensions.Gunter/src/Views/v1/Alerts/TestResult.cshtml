@@ -1,5 +1,5 @@
 ﻿@model Mailr.Extensions.Gunter.Models.v1.Alerts.TestResultBody
-@addTagHelper *, Mailr
+@addTagHelper Mailr.Mvc.TagHelpers.InlineClassTagHelper, Mailr
 
 <html>
 <head>
@@ -20,7 +20,7 @@
 <hr/>
 
 @{
-    Html.RenderPartial("Footer");
+    Html.RenderPartial("Footer-v1");
     //Html.RenderPartial("~/src/Views/Shared/Footer.cshtml");
 }
 </body>

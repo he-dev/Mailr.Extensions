@@ -1,6 +1,8 @@
 ﻿@using Mailr.Extensions.Gunter.Models.v1.Alerts
 @using Mailr.Extensions.Models
 @model Mailr.Extensions.Gunter.Models.v1.Alerts.DataSummary
+@addTagHelper Mailr.Mvc.TagHelpers.InlineClassTagHelper, Mailr
+
 
 <h4 class="m-heading">@Model.Heading</h4>
 <table class="m-table">
@@ -32,5 +34,5 @@
                 }
             </tr>
         }
-    </tbody>   
+    </tbody>
 </table>
