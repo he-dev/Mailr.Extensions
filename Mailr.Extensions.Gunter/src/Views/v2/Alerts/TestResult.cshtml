@@ -1,4 +1,4 @@
-﻿@model Mailr.Extensions.Gunter.Models.v1.Alerts.TestResultBody
+﻿@model Mailr.Extensions.Gunter.Models.v2.Alerts.TestResultBody
 @addTagHelper *, Mailr
 
 <html>
@@ -12,9 +12,9 @@
 </head>
 <body>
 
-@foreach (var module in Model.Modules.OrderBy(x => x.Value.Ordinal))
+@foreach (var module in Model.Modules.OrderBy(x => x.Ordinal))
 {
-    Html.RenderPartial($"Modules/{module.Key}", module.Value);
+    Html.RenderPartial($"~/src/Views/v2/Alerts/Modules/{module.GetType().Name}.cshtml", module);
 }
 
 <hr/>

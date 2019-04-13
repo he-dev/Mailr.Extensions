@@ -1,0 +1,36 @@
+﻿@using Mailr.Extensions.Gunter.Models.v2.Alerts
+@using Mailr.Extensions.Models
+@model Mailr.Extensions.Gunter.Models.v2.Alerts.DataSummary
+
+<h4 class="m-heading">@Model.Heading</h4>
+<table class="m-table">
+    <thead class="m-table-header">
+        <tr>
+            @foreach (var header in (Model.Data?.Head?.FirstOrDefault() ?? Enumerable.Empty<HtmlTableCell>()))
+            {
+                <th class="m-cell m-table-header">@header.Value</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Model.Data?.Body ?? HtmlTableRowGroup.Empty)
+        {
+            <tr>
+                @foreach (var column in row)
+                {
+                    <td class="m-cell">@column.Value</td>
+                }
+            </tr>
+        }
+        <!-- Outlook does not support tfoot-->
+        @foreach (var row in Model.Data?.Foot ?? HtmlTableRowGroup.Empty)
+        {
+            <tr>
+                @foreach (var column in row)
+                {
+                    <td class="m-cell m-table-footer">@column.Value</td>
+                }
+            </tr>
+        }
+    </tbody>   
+</table>
