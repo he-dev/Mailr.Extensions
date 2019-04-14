@@ -18,7 +18,10 @@ namespace Mailr.Extensions.Gunter.Models.v2.Alerts
     [PublicAPI]
     [UsedImplicitly]
     public abstract class Module
-    {        
+    {
+        [JsonIgnore]
+        public string Name => GetType().Name;
+        
         public string Heading { get; set; }
 
         public string Text { get; set; }

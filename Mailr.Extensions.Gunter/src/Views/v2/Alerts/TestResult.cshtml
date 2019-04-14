@@ -14,7 +14,7 @@
 
 @foreach (var module in Model.Modules.OrderBy(x => x.Ordinal))
 {
-    Html.RenderPartial($"~/src/Views/v2/Alerts/Modules/{module.GetType().Name}.cshtml", module);
+    Html.RenderPartial($"~/src/Views/v2/Alerts/Modules/{module.Name}.cshtml", module);
 }
 
 <hr/>
