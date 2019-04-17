@@ -1,11 +1,11 @@
 ﻿.m-heading {
-    font-family: Sans-Serif;
+    font-family: sans-serif;
     color: #3F6699;
     font-weight: normal;
 }
 
 .m-paragraph {
-    font-family: Sans-Serif;
+    font-family: sans-serif;
 }
 
 .m-message {
@@ -85,4 +85,12 @@ m-hr {
 
 .m-product-name {
     color: #247BA0;
+}
+
+.m-passed {
+    background-color: #D4EFDF;
+}
+
+.m-failed {
+    background-color: #FADBD8;
 }

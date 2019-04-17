@@ -7,7 +7,7 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">    
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <OutDir>bin\Release</OutDir>
   </PropertyGroup>
 
@@ -24,6 +24,16 @@
     <EmbeddedResource Include="src\Views\**\*.cshtml" />
   </ItemGroup>
 
+  <!--<ItemGroup>
+    <Views Include="src\Views\**\*.cshtml" />
+  </ItemGroup>
+  <Target Name="CopyViews" AfterTargets="AfterBuild">
+    <Copy
+        SourceFiles="@(Views)"
+        DestinationFolder="c:\temp\blub\%(RecursiveDir)"
+    />
+  </Target>-->
+
   <ItemGroup>
     <Compile Remove="src\Mvc\**" />
     <EmbeddedResource Remove="src\Mvc\**" />
@@ -39,10 +49,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2018.2.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.3">
+    <PackageReference Include="JetBrains.Annotations" Version="2018.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0">
       <ExcludeAssets>analyzers</ExcludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="3.1.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,9 +61,9 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)'=='Debug' OR '$(Configuration)'=='Release'">
-    <PackageReference Include="Reusable.Core" Version="7.8.0" />
-    <PackageReference Include="Reusable.OmniLog.SemanticMiddleware" Version="7.8.0" />
-    <PackageReference Include="Reusable.Utilities.AspNetCore" Version="7.8.0" />
+    <PackageReference Include="Reusable.Core" Version="8.12.0" />
+    <PackageReference Include="Reusable.OmniLog.SemanticMiddleware" Version="8.12.0" />
+    <PackageReference Include="Reusable.Utilities.AspNetCore" Version="8.12.0" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)'=='Debug.csproj'">
@@ -62,30 +73,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="src\Views\Alerts\Modules\DataSource.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Update="src\Views\Alerts\Modules\DataSummary.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Update="src\Views\Alerts\Modules\Greeting.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Update="src\Views\Alerts\Modules\Level.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Update="src\Views\Alerts\Modules\TestCase.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Update="src\Views\Alerts\TestResult.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="wwwroot\css\Alerts\TestResult.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
+
 
 </Project>

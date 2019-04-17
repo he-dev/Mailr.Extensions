@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using Mailr.Extensions.Gunter.Json;
+using Mailr.Extensions.Models;
 using Newtonsoft.Json;
 
-namespace Mailr.Extensions.Gunter.Models.Alerts
+namespace Mailr.Extensions.Gunter.Models.v1.Alerts
 {
     public class TestResultBody
     {
@@ -20,7 +21,7 @@ namespace Mailr.Extensions.Gunter.Models.Alerts
 
         public int Ordinal { get; set; }
 
-        public Table Table { get; set; }
+        public HtmlTable Data { get; set; }
     }
 
     public class Level : Module { }
@@ -33,14 +34,5 @@ namespace Mailr.Extensions.Gunter.Models.Alerts
 
     public class DataSummary : Module { }
 
-    public class Signature : Module { }
-
-    public class Table
-    {
-        public IList<IList<object>> Head { get; set; }
-
-        public IList<IList<object>> Body { get; set; }
-
-        public IList<IList<object>> Foot { get; set; }
-    }
+    public class Signature : Module { }    
 }

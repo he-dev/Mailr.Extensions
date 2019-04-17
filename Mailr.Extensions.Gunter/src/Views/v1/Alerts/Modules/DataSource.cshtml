@@ -1,0 +1,22 @@
+﻿@using Mailr.Extensions.Gunter.Models.v1.Alerts
+@using Mailr.Extensions.Models
+@model Mailr.Extensions.Gunter.Models.v1.Alerts.DataSource
+@addTagHelper Mailr.Mvc.TagHelpers.InlineClassTagHelper, Mailr
+
+
+<h4 class="m-heading">@Model.Heading</h4>
+<table class="m-table">
+    <tbody>
+        @foreach (var row in Model.Data?.Body ?? HtmlTableRowGroup.Empty)
+        {
+            //var value = row[1].Value;
+            //if (row[1].Styles?.Contains("query") == true)
+            //{
+            //}
+            <tr>
+                <th class="m-cell m-table-header">@row[0].Value</th>
+                <td class="m-cell">@row[1].Value?.ToString().Trim()</td>
+            </tr>
+        }
+    </tbody>
+</table>
