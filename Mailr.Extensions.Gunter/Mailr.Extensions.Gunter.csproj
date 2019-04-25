@@ -61,9 +61,9 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)'=='Debug' OR '$(Configuration)'=='Release'">
-    <PackageReference Include="Reusable.Core" Version="9.1.1" />
-    <PackageReference Include="Reusable.OmniLog.SemanticMiddleware" Version="9.1.1" />
-    <PackageReference Include="Reusable.Utilities.AspNetCore" Version="9.1.1" />
+    <PackageReference Include="Reusable.Core" Version="9.1.2" />
+    <PackageReference Include="Reusable.OmniLog.SemanticMiddleware" Version="9.1.2" />
+    <PackageReference Include="Reusable.Utilities.AspNetCore" Version="9.1.2" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)'=='Debug.csproj'">
