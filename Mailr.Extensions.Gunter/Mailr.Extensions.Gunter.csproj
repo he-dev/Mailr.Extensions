@@ -3,17 +3,9 @@
   <PropertyGroup>
     <TargetFrameworks>netcoreapp2.2;net47</TargetFrameworks>
     <LangVersion>latest</LangVersion>
-    <Configurations>Debug;Release;Debug.csproj</Configurations>
+    <Configurations>Debug;Debug.csproj;Release</Configurations>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutDir>bin\Release</OutDir>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug.csproj|AnyCPU'">
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
