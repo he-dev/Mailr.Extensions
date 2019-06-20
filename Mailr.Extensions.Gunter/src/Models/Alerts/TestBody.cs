@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using JetBrains.Annotations;
-using Mailr.Extensions.Gunter.Json;
 using Mailr.Extensions.Models;
 using Newtonsoft.Json;
 using Reusable.Utilities.JsonNet.Converters;
 
-namespace Mailr.Extensions.Gunter.Models.v2.Alerts
+namespace Mailr.Extensions.Gunter.Models.Alerts
 {
     [PublicAPI]
     [UsedImplicitly]

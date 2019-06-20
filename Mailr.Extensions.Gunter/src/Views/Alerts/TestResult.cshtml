@@ -1,0 +1,29 @@
+﻿@using Mailr.Extensions.Gunter.Models.Alerts
+@model TestResultBody
+@addTagHelper Mailr.Extensions.Mvc.TagHelpers.ImportCssTagHelper, Mailr.Extensions
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<html>
+<head>
+
+    <style>
+    </style>
+
+</head>
+<body>
+
+    @foreach (var module in Model.Modules.OrderBy(x => x.Ordinal))
+    {
+        //Html.RenderPartial($"~/src/Views/v2/Alerts/Modules/{module.Name}.cshtml", module);
+        <partial name="/src/Views/Alerts/Modules/@(module.Name).cshtml" for="@module" />
+    }
+
+    <hr />
+
+    @{
+        //Html.RenderPartial("Footer-v2");
+        //Html.RenderPartial("~/src/Views/Shared/Footer-v2.cshtml");
+        <partial name="/src/Views/Shared/Footer-v2.cshtml" />
+    }
+</body>
+</html>
