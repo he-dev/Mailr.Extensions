@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using JetBrains.Annotations;
 using Mailr.Extensions.Gunter.Models.Alerts;
 //using v1 = Mailr.Extensions.Gunter.Models.v1.Alerts;
@@ -19,14 +20,14 @@ using Reusable.Utilities.AspNetCore.ActionFilters;
 
 namespace Mailr.Extensions.Gunter.Controllers
 {
-    //[Area("test")]
+    [Area("Gunter")]
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
     [Route("api/v{version:apiVersion}/gunter/[controller]")]
-    [Extension]
+    //[Extension]
     [ApiController]
     public class AlertsController : Controller
-    {        
+    {
         //[HttpPost("[action]")]
         //[ServiceFilter(typeof(ValidateModel))]
         //[ServiceFilter(typeof(SendEmail))]
@@ -36,7 +37,7 @@ namespace Mailr.Extensions.Gunter.Controllers
         //    return this.SelectEmailView(view)("~/src/Views/v1/Alerts/TestResult.cshtml", email.Body);
         //    //return this.SelectEmailView(EmailView.Original)(null, email.Body);
         //}
-        
+
         [HttpPost("[action]")]
         [ServiceFilter(typeof(ValidateModel))]
         [ServiceFilter(typeof(SendEmail))]
@@ -67,7 +68,7 @@ namespace Mailr.Extensions.Gunter.Controllers
             //    }
             //}
 
-            return this.SelectEmailView(view)("/src/Views/Alerts/TestResult.cshtml", email.Body);
+            return this.SelectEmailView(view)("/src/Views/Alerts/TestResult.cshtml", new TestResult { Body = email.Body, Footer = new Footer() });
             //return this.SelectEmailView(EmailView.Original)(null, email.Body);
         }
     }

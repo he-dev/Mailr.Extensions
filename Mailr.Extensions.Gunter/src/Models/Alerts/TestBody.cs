@@ -20,7 +20,7 @@ namespace Mailr.Extensions.Gunter.Models.Alerts
     {
         [JsonIgnore]
         public string Name => GetType().Name;
-        
+
         public string Heading { get; set; }
 
         public string Text { get; set; }
@@ -40,5 +40,5 @@ namespace Mailr.Extensions.Gunter.Models.Alerts
 
     public class DataSummary : Module { }
 
-    public class Signature : Module { }    
+    //public class Signature : Module { }
 }
