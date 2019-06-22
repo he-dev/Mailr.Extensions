@@ -38,6 +38,11 @@
     <None Remove="src\Models\v2\**" />
     <None Remove="src\Views\v1\**" />
     <None Remove="src\Views\v2\**" />
+    <Compile Remove="src\Json\DictionaryConverter.cs" />
+    <Compile Remove="src\Json\**" />
+    <EmbeddedResource Remove="src\Json\**" />
+    <None Remove="src\Json\**" />
+    <Content Remove="src\Json\**" />
   </ItemGroup>
 
 
