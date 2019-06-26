@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <Configurations>Debug;Debug.csproj;Release</Configurations>
+    <Configurations>Debug;Debug.csproj;Release;Debug.nuget</Configurations>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <Platforms>AnyCPU</Platforms>
     <!--<CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>-->
@@ -18,32 +18,15 @@
     <OutputPath>bin\Debug</OutputPath>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)'=='Debug.nuget'">
+    <OutputPath>bin\Debug</OutputPath>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)'=='Debug.csproj'">
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="src\Models\v1\**" />
-    <Compile Remove="src\Models\v2\**" />
-    <Compile Remove="src\Views\v1\**" />
-    <Compile Remove="src\Views\v2\**" />
-    <Content Remove="src\Views\v1\**" />
-    <EmbeddedResource Remove="src\Models\v1\**" />
-    <EmbeddedResource Remove="src\Models\v2\**" />
-    <EmbeddedResource Remove="src\Views\v1\**" />
-    <EmbeddedResource Remove="src\Views\v2\**" />
-    <None Remove="src\Models\v1\**" />
-    <None Remove="src\Models\v2\**" />
-    <None Remove="src\Views\v1\**" />
-    <None Remove="src\Views\v2\**" />
-  </ItemGroup>
-
-
-  <!--<ItemGroup>
-    <EmbeddedResource Include="src\Views\**\*.cshtml" />
-  </ItemGroup>-->
 
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2019.1.1" />
@@ -60,7 +43,7 @@
     <ProjectReference Include="..\..\Mailr\Mailr.Extensions\Mailr.Extensions.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Debug' OR '$(Configuration)'=='Release'">
+  <ItemGroup Condition="'$(Configuration)'=='Debug.nuget' OR '$(Configuration)'=='Release'">
     <PackageReference Include="Reusable.Core" Version="11.0.3" />
     <PackageReference Include="Reusable.OmniLog.SemanticMiddleware" Version="11.0.3" />
     <PackageReference Include="Reusable.Utilities.AspNetCore" Version="11.0.3" />
