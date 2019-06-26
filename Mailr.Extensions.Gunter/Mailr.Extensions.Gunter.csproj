@@ -61,4 +61,10 @@
     <ProjectReference Include="..\..\Reusable\Reusable.Utilities.AspNetCore\Reusable.Utilities.AspNetCore.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="wwwroot\css\Gunter\Alerts\TestResult\default.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
