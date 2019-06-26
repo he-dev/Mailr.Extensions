@@ -10,9 +10,10 @@ using Reusable.Reflection;
 
 namespace Mailr.Extensions.Gunter.Json
 {
+    // Deserializes test-result modules from a dictionary where keys are module-type-names.
     internal class DictionaryConverter<TValue> : JsonConverter
     {
-        // ReSharper disable once StaticMemberInGenericType - We want this to be static for the curren type.
+        // ReSharper disable once StaticMemberInGenericType - We want this to be static for the current type.
         private static readonly IDictionary<string, Type> ModuleTypes;
 
         static DictionaryConverter()
