@@ -28,6 +28,12 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug.nuget|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2019.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0">
@@ -44,9 +50,9 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)'=='Debug.nuget' OR '$(Configuration)'=='Release'">
-    <PackageReference Include="Reusable.Core" Version="11.0.3" />
-    <PackageReference Include="Reusable.OmniLog.SemanticMiddleware" Version="11.0.3" />
-    <PackageReference Include="Reusable.Utilities.AspNetCore" Version="11.0.3" />
+    <PackageReference Include="Reusable.Core" Version="11.0.4" />
+    <PackageReference Include="Reusable.OmniLog.SemanticMiddleware" Version="11.0.4" />
+    <PackageReference Include="Reusable.Utilities.AspNetCore" Version="11.0.4" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)'=='Debug.csproj'">
