@@ -47,6 +47,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Mailr\Mailr.Extensions\Mailr.Extensions.csproj" />
+    <ProjectReference Include="..\..\Reusable\Reusable.Beaver\Reusable.Beaver.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)'=='Debug.nuget' OR '$(Configuration)'=='Release'">
