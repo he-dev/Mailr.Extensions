@@ -42,7 +42,7 @@ namespace Mailr.Extensions.Gunter.Controllers
         [ServiceFilter(typeof(ValidateModel))]
         [ServiceFilter(typeof(SendEmail))]
         [MapToApiVersion("2.0")]
-        [LogResponseBody]
+        [ServiceFilter(typeof(LogResponseBody))]
         public IActionResult TestResult([FromBody] Email<TestResultBody> email, [ModelBinder(typeof(EmailViewBinder))] EmailView view)
         {
             //using (var writer = new StringWriter())
