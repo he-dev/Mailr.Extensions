@@ -34,11 +34,11 @@ namespace Mailr.Extensions.Gunter.Models.Alerts
 
     public class Greeting : Module { }
 
-    public class TestCase : Module { }
+    public class TestInfo : Module { }
 
-    public class DataSource : Module { }
+    public class QueryInfo : Module { }
 
-    public class DataSummary : Module { }
+    public class DataInfo : Module { }
 
     //public class Signature : Module { }
 }

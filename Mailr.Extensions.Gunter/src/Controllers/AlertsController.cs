@@ -21,8 +21,9 @@ using Reusable.Utilities.AspNetCore.ActionFilters;
 namespace Mailr.Extensions.Gunter.Controllers
 {
     [Area("Gunter")]
-    [ApiVersion("1.0")]
-    [ApiVersion("2.0")]
+    //[ApiVersion("1.0")]
+    //[ApiVersion("2.0")]
+    [ApiVersion("3.0")]
     [Route("api/v{version:apiVersion}/gunter/[controller]")]
     //[Extension]
     [ApiController]
@@ -41,7 +42,7 @@ namespace Mailr.Extensions.Gunter.Controllers
         [HttpPost("[action]")]
         [ServiceFilter(typeof(ValidateModel))]
         [ServiceFilter(typeof(SendEmail))]
-        [MapToApiVersion("2.0")]
+        [MapToApiVersion("3.0")]
         [ServiceFilter(typeof(LogResponseBody))]
         public IActionResult TestResult([FromBody] Email<TestResultBody> email, [ModelBinder(typeof(EmailViewBinder))] EmailView view)
         {
