@@ -1,20 +1,11 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using JetBrains.Annotations;
-using Mailr.Extensions.Gunter.Models.Alerts;
+﻿using Mailr.Extensions.Gunter.Models.Alerts;
 //using v1 = Mailr.Extensions.Gunter.Models.v1.Alerts;
 using Mailr.Extensions.Models;
 using Mailr.Extensions.Utilities.Mvc;
 using Mailr.Extensions.Utilities.Mvc.Filters;
 using Mailr.Extensions.Utilities.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Mvc.ViewComponents;
-using Microsoft.AspNetCore.Mvc.ViewEngines;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Reusable.OmniLog.SemanticExtensions.AspNetCore.Mvc.Filters;
 using Reusable.Utilities.AspNetCore.ActionFilters;
 

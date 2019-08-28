@@ -6,6 +6,7 @@
     <Configurations>Debug;Release</Configurations>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <Platforms>AnyCPU</Platforms>
+    <AssemblyName>Mailr.Extensions.Gunter</AssemblyName>
     <!--<CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>-->
     <!--<PreserveCompilationContext>true</PreserveCompilationContext>-->
     <!--<RazorCompileOnBuild>true</RazorCompileOnBuild>-->
@@ -15,10 +16,9 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>bin\Debug</OutputPath>
     <Optimize>false</Optimize>
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,15 +28,15 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.ViewCompilation" Version="2.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-    <PackageReference Include="Reusable.Beaver" Version="14.0.11" />
-    <PackageReference Include="Reusable.Core" Version="14.0.11" />
-    <PackageReference Include="Reusable.OmniLog.SemanticExtensions.AspNetCore" Version="14.0.11" />
-    <PackageReference Include="Reusable.Utilities.AspNetCore" Version="14.0.11" />
-    <PackageReference Include="Reusable.Utilities.JsonNet" Version="14.0.11" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Mailr\Mailr.Extensions\Mailr.Extensions.csproj" />
+    <ProjectReference Include="..\..\mailr\Mailr.Extensions\Mailr.Extensions.csproj" />
+    <ProjectReference Include="..\..\Reusable\Reusable.Beaver\Reusable.Beaver.csproj" />
+    <ProjectReference Include="..\..\Reusable\Reusable.Core\Reusable.Core.csproj" />
+    <ProjectReference Include="..\..\Reusable\Reusable.OmniLog.SemanticExtensions.AspNetCore\Reusable.OmniLog.SemanticExtensions.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\Reusable\Reusable.Utilities.AspNetCore\Reusable.Utilities.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\Reusable\Reusable.Utilities.JsonNet\Reusable.Utilities.JsonNet.csproj" />
   </ItemGroup>
-
+  
 </Project>
