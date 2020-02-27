@@ -1,19 +1,19 @@
 ﻿@using Mailr.Extensions.Models
 @model Mailr.Extensions.Gunter.Models.Alerts.TestInfo
 
-<h4 class="m-heading">@Model.Heading</h4>
-<table class="m-table">
+<h4 class="heading">@Model.Heading</h4>
+<table class="table">
     <tbody>
     @foreach (var row in Model.Data?.Body ?? HtmlTableRowGroup.Empty)
     {
-        var styles = string.Join(" ", (row[1].Styles ?? Enumerable.Empty<string>()).Select(s => $"m-{s}"));
+        var styles = string.Join(" ", (row[1].Styles ?? Enumerable.Empty<string>()).Select(s => $"{s}"));
         <tr>
-            <th class="m-cell m-table-header">@row[0].Value</th>
+            <th class="cell table-header">@row[0].Value</th>
             
             @switch (row[1].Value)
             {
                 case IEnumerable<object> collection:                    
-                    <td class="m-cell @styles">
+                    <td class="cell @styles">
                         <ul style="padding: 0; margin: 0; list-style-type: none;">
                             @foreach (var value in collection)
                             {
@@ -23,7 +23,7 @@
                     </td>
                     break;
                 default:
-                    <td class="m-cell @styles">@row[1].Value</td>
+                    <td class="cell @styles">@row[1].Value</td>
                     break;
             }
             

@@ -7,6 +7,7 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <Platforms>AnyCPU</Platforms>
     <AssemblyName>Mailr.Extensions.Gunter</AssemblyName>
+    <RootNamespace>Mailr.Extensions.Gunter-dev</RootNamespace>
     <!--<CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>-->
     <!--<PreserveCompilationContext>true</PreserveCompilationContext>-->
     <!--<RazorCompileOnBuild>true</RazorCompileOnBuild>-->
@@ -31,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\mailr\Mailr.Extensions\Mailr.Extensions-dev.csproj" />
+    <ProjectReference Include="..\..\mailr\Mailr.Extensions\Mailr.Extensions-with-Projects.csproj" />
     <ProjectReference Include="..\..\Reusable\Reusable.Beaver\Reusable.Beaver.csproj" />
     <ProjectReference Include="..\..\Reusable\Reusable.Core\Reusable.Core.csproj" />
     <ProjectReference Include="..\..\Reusable\Reusable.OmniLog.SemanticExtensions.AspNetCore\Reusable.OmniLog.SemanticExtensions.AspNetCore.csproj" />

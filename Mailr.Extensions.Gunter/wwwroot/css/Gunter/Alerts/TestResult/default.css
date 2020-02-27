@@ -1,18 +1,20 @@
-﻿.m-heading {
+﻿/* gunter */
+
+.heading {
     font-family: sans-serif;
     color: #3F6699;
     font-weight: normal;
 }
 
-.m-paragraph {
+.paragraph {
     font-family: sans-serif;
 }
 
-.m-message {
+.message {
     color: #971549;
 }
 
-.m-test-case-level {
+.test-case-level {
     font-family: Consolas, monospace;
     font-size: 1em;
     color: white;
@@ -21,37 +23,33 @@
     text-transform: uppercase;
 }
 
-.m-trace {
+.log-level-trace {
     background-color: #6643B5;
 }
 
-.m-debug {
+.log-level-debug {
     background-color: #2874A6;
 }
 
-.m-information {
+.log-level-information {
     background-color: #229954;
 }
 
-.m-warning {
+.log-level--warning {
     background-color: #D4AC0D;
 }
 
-.m-error {
+.log-level--error {
     background-color: #C0392B;
 }
 
-.m-fatal {
+.log-level--fatal {
     background-color: #E74C3C;
 }
 
-m-hr {
-    border: 0;
-    border-bottom: 1px solid #ccc;
-    background: #CCC
-}
 
-.m-table {
+
+.table {
     border: 1px solid #742846;
     border-collapse: collapse;
     font-family: Consolas, monospace, trebuchet ms, sans-serif;
@@ -59,33 +57,30 @@ m-hr {
     color: #50514F;
 }
 
-.m-cell {
+.cell {
     border: 1px solid #9A9B94;
     padding: 5px;
 }
 
-.m-table-header {
+.table-header {
     background-color: #E9E9E5;
     text-align: left;
     font-weight: normal;
 }
 
-.m-table-footer {
+.table-footer {
     font-style: italic;
     background-color: #ECECEC;
     color: #50514F;
     font-size: 0.75em
 }
 
-.m-auto-generated-by {
-    font-family: sans-serif;
-    font-size: 12px;
-    color: #A0A0A0;
+.separator {
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    background: #CCC
 }
 
-.m-product-name {
-    color: #247BA0;
-}
 
 .m-passed {
     background-color: #D4EFDF;
