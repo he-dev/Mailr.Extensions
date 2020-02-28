@@ -3,22 +3,30 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <Configurations>Debug;Release</Configurations>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Configurations>Debug.csproj;Debug.nuget;Release.nuget</Configurations>
     <Platforms>AnyCPU</Platforms>
+    <AssemblyName>Mailr.Extensions.Gunter</AssemblyName>
+    <RootNamespace>Mailr.Extensions.Gunter-dev</RootNamespace>
     <!--<CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>-->
     <!--<PreserveCompilationContext>true</PreserveCompilationContext>-->
     <!--<RazorCompileOnBuild>true</RazorCompileOnBuild>-->
     <!--<MvcRazorCompileOnBuild>true</MvcRazorCompileOnBuild>-->
     <!--<MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>-->
     <!--<RazorCompileOnPublish>true</RazorCompileOnPublish>-->
+    <DebugType>full</DebugType>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>bin\Debug</OutputPath>
+  <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
     <Optimize>false</Optimize>
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,15 +35,24 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="3.1.6" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.ViewCompilation" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(Configuration)' == 'Debug.csproj' ">
+    <ProjectReference Include="..\..\mailr\Mailr.Extensions\Mailr.Extensions.csproj" />
+    <ProjectReference Include="..\..\Reusable\Reusable.Beaver\Reusable.Beaver.csproj" />
+    <ProjectReference Include="..\..\Reusable\Reusable.Core\Reusable.Core.csproj" />
+    <ProjectReference Include="..\..\Reusable\Reusable.OmniLog.SemanticExtensions.AspNetCore\Reusable.OmniLog.SemanticExtensions.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\Reusable\Reusable.Utilities.AspNetCore\Reusable.Utilities.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\Reusable\Reusable.Utilities.JsonNet\Reusable.Utilities.JsonNet.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(Configuration)' == 'Debug.nuget' ">
     <PackageReference Include="Reusable.Beaver" Version="16.2.3" />
     <PackageReference Include="Reusable.Core" Version="16.2.3" />
     <PackageReference Include="Reusable.OmniLog.SemanticExtensions.AspNetCore" Version="16.2.3" />
     <PackageReference Include="Reusable.Utilities.AspNetCore" Version="16.2.3" />
     <PackageReference Include="Reusable.Utilities.JsonNet" Version="16.2.3" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\Mailr\Mailr.Extensions\Mailr.Extensions.csproj" />
-  </ItemGroup>
-
+  
 </Project>
