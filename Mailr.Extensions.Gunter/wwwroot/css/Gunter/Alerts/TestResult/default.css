@@ -35,18 +35,17 @@
     background-color: #229954;
 }
 
-.log-level--warning {
+.log-level-warning {
     background-color: #D4AC0D;
 }
 
-.log-level--error {
+.log-level-error {
     background-color: #C0392B;
 }
 
-.log-level--fatal {
+.log-level-fatal {
     background-color: #E74C3C;
 }
-
 
 
 .table {
