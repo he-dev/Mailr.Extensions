@@ -10,7 +10,7 @@ namespace Mailr.Extensions.Gunter.Models.Alerts
     [UsedImplicitly]
     public class TestResultBody
     {
-        [JsonConverter(typeof(ListConverter<Module>))]
+        [JsonConverter(typeof(ListConverter<Module>), "$t")]
         public List<Module> Modules { get; set; } = new List<Module>();
     }
 

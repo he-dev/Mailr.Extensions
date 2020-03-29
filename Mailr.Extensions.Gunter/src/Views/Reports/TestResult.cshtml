@@ -1,0 +1,33 @@
+﻿@using Mailr.Extensions.Gunter.Models.Reports
+@using Reusable.Extensions
+@model Mailr.Extensions.Gunter.Models.Reports.TestResult
+@addTagHelper *, Mailr.Extensions
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<html>
+<head>
+
+    <style>
+    </style>
+
+</head>
+<body>
+
+@foreach (var module in Model.Body.Sections)
+{
+    if (module is TableDto)
+    {
+        <partial name="/src/Views/Reports/Sections/Tables/@(module.Tags.Single(t => t.StartsWith("table-")).Replace(@"(^table|\-)")).cshtml" for="@module"/>
+    }
+    else
+    {
+        <partial name="/src/Views/Reports/Sections/@(module.Tags.Single(t => t.StartsWith("section-")).Replace(@"(^section|\-)")).cshtml" for="@module"/>
+    }
+}
+
+<hr class="separator"/>
+
+<partial name="/src/Views/Shared/Footer.cshtml" for="@Model.Footer"/>
+
+</body>
+</html>

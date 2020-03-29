@@ -1,0 +1,33 @@
+﻿@using Mailr.Extensions.Models
+@using Mailr.Extensions.Gunter.Models.Reports
+@model Mailr.Extensions.Gunter.Models.Reports.TableDto
+
+<table class="table">
+    <tbody>
+    @foreach (var row in Model.Data?.Body ?? HtmlTableRowGroup.Empty)
+    {
+        var styles = string.Join(" ", (row[1].Styles ?? Enumerable.Empty<string>()).Select(s => $"{s}"));
+        <tr>
+            <th class="cell table-header">@row[0].Value</th>
+            
+            @switch (row[1].Value)
+            {
+                case IEnumerable<object> collection:                    
+                    <td class="cell @styles">
+                        <ul style="padding: 0; margin: 0; list-style-type: none;">
+                            @foreach (var value in collection)
+                            {
+                                <li>&gt; @value</li>
+                            }
+                        </ul>
+                    </td>
+                    break;
+                default:
+                    <td class="cell @styles">@row[1].Value</td>
+                    break;
+            }
+            
+        </tr>
+    }
+    </tbody>
+</table>

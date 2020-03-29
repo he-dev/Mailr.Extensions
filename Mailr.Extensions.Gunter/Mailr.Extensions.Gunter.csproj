@@ -70,5 +70,9 @@
     <PackageReference Include="Reusable.Utilities.AspNetCore" Version="17.4.3" />
     <PackageReference Include="Reusable.Utilities.JsonNet" Version="17.4.3" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="src\Helpers" />
+  </ItemGroup>
   
 </Project>

@@ -1,0 +1,28 @@
+﻿@using System.Linq.Custom
+@using Mailr.Extensions.Gunter.Models.Reports
+@using Mailr.Extensions.Helpers
+@model Mailr.Extensions.Gunter.Models.Reports.HeadingDto
+
+@{
+    switch (Model.Level)
+    {
+        case 1:
+            <h1 class="heading @Model.ToStyles().Join(" ")">@Model.Text</h1>
+            break;
+        case 2:
+            <h2 class="heading @Model.ToStyles().Join(" ")">@Model.Text</h2>
+            break;
+        case 3:
+            <h3 class="heading @Model.ToStyles().Join(" ")">@Model.Text</h3>
+            break;
+        case 4:
+            <h4 class="heading @Model.ToStyles().Join(" ")">@Model.Text</h4>
+            break;
+        case 5:
+            <h5 class="heading @Model.ToStyles().Join(" ")">@Model.Text</h5>
+            break;
+        case 6:
+            <h6 class="heading @Model.ToStyles().Join(" ")">@Model.Text</h6>
+            break;
+    }
+}

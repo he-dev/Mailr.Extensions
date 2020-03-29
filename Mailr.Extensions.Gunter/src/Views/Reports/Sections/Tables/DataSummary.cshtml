@@ -1,0 +1,34 @@
+﻿@using Mailr.Extensions.Models
+@using Mailr.Extensions.Gunter.Models.Reports
+@model Mailr.Extensions.Gunter.Models.Reports.TableDto
+
+<table class="table">
+    <!-- not using thead because of outlook -->
+    <tr class="table-header">
+        @foreach (var header in (Model.Data?.Head?.FirstOrDefault() ?? Enumerable.Empty<HtmlTableCell>()))
+        {
+            <td class="cell table-header">@header.Value</td>
+        }
+    </tr>
+    <tbody>
+    @foreach (var row in Model.Data?.Body ?? HtmlTableRowGroup.Empty)
+    {
+        <tr>
+            @foreach (var column in row)
+            {
+                <td class="cell">@column.Value</td>
+            }
+        </tr>
+    }
+    <!-- not using tfoot because of outlook -->
+    @foreach (var row in Model.Data?.Foot ?? HtmlTableRowGroup.Empty)
+    {
+        <tr>
+            @foreach (var column in row)
+            {
+                <td class="cell table-footer">@column.Value</td>
+            }
+        </tr>
+    }
+    </tbody>
+</table>
