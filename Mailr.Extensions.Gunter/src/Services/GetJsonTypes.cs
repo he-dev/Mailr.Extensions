@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Mailr.Extensions.Gunter.Models.Reports;
-using Reusable.Utilities.AspNetCore.Abstractions;
+using Reusable.Utilities.JsonNet.Abstractions;
 
 namespace Mailr.Extensions.Gunter.Services
 {

@@ -21,7 +21,6 @@ namespace Mailr.Extensions.Gunter.Models.Reports
         public List<Section> Sections { get; set; } = new List<Section>();
     }
 
-    [Mailr]
     [PublicAPI]
     [UsedImplicitly]
     public abstract class Section : ITaggable
@@ -29,6 +28,7 @@ namespace Mailr.Extensions.Gunter.Models.Reports
         public HashSet<string> Tags { get; set; }
     }
 
+    [Mailr]
     public class HeadingDto : Section
     {
         public string Text { get; set; }
@@ -36,11 +36,13 @@ namespace Mailr.Extensions.Gunter.Models.Reports
         public int Level { get; set; }
     }
 
+    [Mailr]
     public class ParagraphDto : Section
     {
         public string Text { get; set; }
     }
 
+    [Mailr]
     public class TableDto : Section
     {
         public HtmlTable Data { get; set; }

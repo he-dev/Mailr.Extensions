@@ -8,13 +8,13 @@
     <Configurations>Debug.csproj;Debug.nuget;Release.nuget</Configurations>
     <Platforms>AnyCPU</Platforms>
     <AssemblyName>Mailr.Extensions.Gunter</AssemblyName>
+    <DebugType>full</DebugType>
     <!--<CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>-->
     <!--<PreserveCompilationContext>true</PreserveCompilationContext>-->
     <!--<RazorCompileOnBuild>true</RazorCompileOnBuild>-->
     <!--<MvcRazorCompileOnBuild>true</MvcRazorCompileOnBuild>-->
     <!--<MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>-->
     <!--<RazorCompileOnPublish>true</RazorCompileOnPublish>-->
-    <DebugType>full</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
@@ -72,7 +72,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="src\Helpers" />
+    <Content Remove="src\Views\Reports\Sections\Level.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Properties\launchSettings.json" />
   </ItemGroup>
   
 </Project>

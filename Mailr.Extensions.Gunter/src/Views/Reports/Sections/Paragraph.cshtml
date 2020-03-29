@@ -1,7 +1,8 @@
 ﻿
 @using System.Linq.Custom
+@using Mailr.Extensions.Gunter.Helpers
 @using Mailr.Extensions.Gunter.Models.Reports
 @using Mailr.Extensions.Helpers
 @model Mailr.Extensions.Gunter.Models.Reports.ParagraphDto
 
-<p class="paragraph @Model.ToStyles().Join(" ")">@Model.Text</p>
+<p class="paragraph @Model.Classes(TagMapping.GetClass).Concat()">@Model.Text</p>
